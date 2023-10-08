@@ -1,0 +1,6 @@
+{
+    "name": "Bun NoCode tailwind Devcontainer",
+    "build": {
+        "dockerfile": "../Dockerfile.dev"
+    }
+}

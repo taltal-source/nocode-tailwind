@@ -1,0 +1,61 @@
+{
+    "name": "Bun NoCode tailwind Devcontainer",
+    "dockerComposeFile": [
+        "../docker-compose.dev.yml",
+        "docker-compose.yml"
+    ],
+    "service": "nocode-tailewind",
+    "workspaceFolder": "/workspace/nocode-tailewind",
+    // コンテナに追加する機能
+    "customizations": {
+        "vscode": {
+            "settings": {
+                // ファイル保存時にフォーマット処理を実行
+                "editor.formatOnSave": true,
+                // 各ファイルのデフォルトのフォーマッターを指定
+                "[javascript]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[javascriptreact]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[typescript]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[typescriptreact]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[json]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[postcss]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[css]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                // ESLintの対象を設定
+                "eslint.validate": [
+                    "javascript",
+                    "javascriptreact",
+                    "typescript",
+                    "typescriptreact"
+                ],
+                // 保存時に実行されるコードアクションを有効に設定
+                "editor.codeActionsOnSave": {
+                    "source.fixAll.eslint": true,
+                    "source.organizeImports": false // ESLintによる自動インポート順序の整理を無効化
+                },
+                // VSCodeのデフォルトのフォーマッターを無効に
+                "javascript.format.enable": false,
+                "typescript.format.enable": false
+            },
+            // 拡張機能を追加
+            "extensions": [
+                "dbaeumer.vscode-eslint", // ESLint
+                "esbenp.prettier-vscode", // Prettier
+                "formulahendry.auto-rename-tag" // Auto Rename Tag
+            ]
+        }
+    }
+}

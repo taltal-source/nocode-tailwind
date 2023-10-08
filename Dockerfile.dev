@@ -1,0 +1,13 @@
+FROM oven/bun:latest AS base
+
+WORKDIR /workspace/nocode-tailewind
+
+COPY package.json .
+
+COPY bun.lockb .
+
+RUN bun install
+
+COPY . .
+
+# CMD ["bun", "--bun", "run", "dev"]
